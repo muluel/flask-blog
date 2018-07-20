@@ -9,19 +9,28 @@
         span{
             color:red;
         }
+        .registered{
+            float: right;
+        }
+        .grip{
+            padding-right: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div>
-        Blog:
+        Mami blog:
         <a href="{{ url_for('index') }}">Home</a>
         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="registered">
+            <a class="grip" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+            <a class="grip" href="{{ url_for('logout') }}">Logout</a>
+        </div>
         {% endif %}
-    </div>
+      </div>
     <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
