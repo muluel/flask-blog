@@ -4,6 +4,7 @@ from app.forms import LoginForm, RegistrationForm
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app.models import User
+from datetime import datetime
 
 # Url setting
 @app.route('/')
@@ -46,11 +47,13 @@ def login():
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
+# logout method
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
+# user register view
 @app.route('/register', methods=['GET', 'POST'])
 
 def register():
@@ -66,6 +69,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+# user profile url and view
 @app.route('/user/<username>')
 @login_required
 
@@ -77,3 +81,11 @@ def user(username):
         {'author':user, 'body':'Test post 3'}
     ]
     return render_template('user.html', user=user, posts=posts)
+
+# last seen recorder
+@app.before_request
+
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen=datetime.utcnow()
+        db.session.commit()
