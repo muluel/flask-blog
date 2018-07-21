@@ -21,4 +21,4 @@ class Config(object):
     ADMINS = ['muhammeduluel@outlook.com', 'golqeee13@gmail.com']
 
     # Post per page configuration
-    POSTS_PER_PAGE = 2
+    POSTS_PER_PAGE = 20
