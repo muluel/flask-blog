@@ -13,6 +13,7 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler
 import os
+from flask_mail import Mail
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -22,6 +23,8 @@ login.login_view = 'login'
 # Database setting
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+# mail instance
+mail = Mail(app)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
