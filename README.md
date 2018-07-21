@@ -1,3 +1,3 @@
-# flask-blog
+# Socialblog
 
-Microblog work with Flask
+Blog work with Flask
