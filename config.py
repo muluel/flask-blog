@@ -19,6 +19,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['muhammeduluel@outlook.com', 'golqeee13@gmail.com']
+    LANGUAGES = ['en', 'tr']
 
     # Post per page configuration
     POSTS_PER_PAGE = 20
