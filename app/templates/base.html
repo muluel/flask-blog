@@ -1,5 +1,8 @@
-{% extends 'bootstrap/base.html' %} {% block title %} {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{%
-endif %} {% endblock %} {% block navbar %}
+{% extends 'bootstrap/base.html' %} 
+{% block title %} 
+{% if title %}{{ title }} - Socialblog{% else %}{{ _('Welcome to Socialblog') }}{% endif %}
+{% endblock %} 
+{% block content %}
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -14,31 +17,20 @@ endif %} {% endblock %} {% block navbar %}
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="{{ url_for('index') }}">Home</a>
-                </li>
-                <li>
-                    <a href="{{ url_for('explore') }}">Explore</a>
-                </li>
+                <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+                <li><a href="{{ url_for('explore') }}">{{ _('Explore') }}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_anonymous %}
-                <li>
-                    <a href="{{ url_for('login') }}">Login</a>
-                </li>
+                <li><a href="{{ url_for('login') }}">{{ _('Login') }}</a></li>
                 {% else %}
-                <li>
-                    <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                </li>
-                <li>
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                </li>
+                <li><a href="{{ url_for('user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+                <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
                 {% endif %}
             </ul>
         </div>
     </div>
 </nav>
-{% endblock %} {% block content %}
 <div class="container">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -55,4 +47,5 @@ endif %} {% endblock %} {% block navbar %}
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
 {% endblock %}
