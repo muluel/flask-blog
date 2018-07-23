@@ -1,7 +1,9 @@
 import os
+from dotenv import load_dotenv
 
 # configuration for bellow lines
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     # Config for secret key 
