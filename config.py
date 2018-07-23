@@ -20,6 +20,7 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['muhammeduluel@outlook.com', 'golqeee13@gmail.com']
     LANGUAGES = ['en', 'tr']
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 
     # Post per page configuration
     POSTS_PER_PAGE = 20

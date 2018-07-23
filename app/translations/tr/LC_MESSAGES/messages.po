@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-07-23 16:01+0300\n"
+"POT-Creation-Date: 2018-07-23 18:34+0300\n"
 "PO-Revision-Date: 2018-07-23 16:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: tr\n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Remember Me"
 msgstr ""
 
-#: app/forms.py:12 app/routes.py:81 app/templates/login.html:2
+#: app/forms.py:12 app/routes.py:86 app/templates/login.html:2
 msgid "Sign In"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Repeat Password"
 msgstr ""
 
-#: app/forms.py:20 app/routes.py:103 app/templates/register.html:5
+#: app/forms.py:20 app/routes.py:108 app/templates/register.html:5
 msgid "Register"
 msgstr ""
 
@@ -78,63 +78,71 @@ msgstr ""
 msgid "Request Password Reset"
 msgstr ""
 
-#: app/routes.py:33
+#: app/routes.py:38
 msgid "Your post is sended."
 msgstr ""
 
-#: app/routes.py:45 app/templates/base.html:20
+#: app/routes.py:50 app/templates/base.html:20
 msgid "Home"
 msgstr ""
 
-#: app/routes.py:60 app/templates/base.html:21
+#: app/routes.py:65 app/templates/base.html:21
 msgid "Explore"
 msgstr ""
 
-#: app/routes.py:74
+#: app/routes.py:79
 msgid "Invalid username or pass"
 msgstr ""
 
-#: app/routes.py:101
+#: app/routes.py:106
 msgid "Congratulations, you are now a registered user!"
 msgstr ""
 
-#: app/routes.py:131
+#: app/routes.py:136
 msgid "Your changes have been saved"
 msgstr ""
 
-#: app/routes.py:136 app/templates/edit_profile.html:5
+#: app/routes.py:141 app/templates/edit_profile.html:5
 msgid "Edit Profile"
 msgstr ""
 
-#: app/routes.py:143 app/routes.py:158
+#: app/routes.py:148 app/routes.py:163
 #, python-format
 msgid "User %(username)s not found."
 msgstr ""
 
-#: app/routes.py:146
+#: app/routes.py:151
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:150
+#: app/routes.py:155
 #, python-format
 msgid "You are following %(username)s!"
 msgstr ""
 
-#: app/routes.py:165
+#: app/routes.py:170
 #, python-format
 msgid "You are not following %(username)s."
 msgstr ""
 
-#: app/routes.py:179
+#: app/routes.py:184
 msgid "Check your email for the instructions to reset your password"
 msgstr ""
 
-#: app/routes.py:181 app/templates/reset_password_request.html:2
+#: app/routes.py:186 app/templates/reset_password_request.html:2
 msgid "Reset Password"
 msgstr ""
 
-#: app/routes.py:195
+#: app/routes.py:200
 msgid "Your password has been reset"
+msgstr ""
+
+#: app/translate.py:9
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:16
+msgid "Error: the translation service failed."
 msgstr ""
 
 #: app/templates/404.html:5
@@ -158,6 +166,10 @@ msgstr ""
 msgid "%(username)s said %(when)s"
 msgstr ""
 
+#: app/templates/_post.html:24
+msgid "Translate"
+msgstr ""
+
 #: app/templates/base.html:3
 msgid "Welcome to Socialblog"
 msgstr ""
@@ -172,6 +184,10 @@ msgstr ""
 
 #: app/templates/base.html:28
 msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:62
+msgid "Error: Could not contact server."
 msgstr ""
 
 #: app/templates/index.html:6
