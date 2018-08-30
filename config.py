@@ -26,3 +26,5 @@ class Config(object):
 
     # Post per page configuration
     POSTS_PER_PAGE = 20
+
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
